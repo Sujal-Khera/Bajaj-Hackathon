@@ -58,6 +58,29 @@ This metadata enables **precise mapping** from answers back to source clauses an
 
 ---
 
+### ✅ Embedding & Vector Indexing
+
+#### 6. **Embedding Generation**
+
+We used a powerful embedding model: **`BAAI/bge-large-en-v1.5`**, to convert each of the cleaned, token-optimized chunks into high-dimensional **semantic vectors (embeddings)**.  
+These embeddings capture the **meaning and intent** of each clause or segment.
+
+---
+
+#### 7. **Vector Indexing**
+
+All generated embeddings—along with their **original text and metadata**—were stored in a **Qdrant** collection.  
+This vector database allows us to **efficiently search** semantically similar content based on natural language queries.
+
+---
+
+#### 8. **Verification**
+
+To validate the setup, we ran test queries against the Qdrant vector store.  
+The system successfully retrieved the **most relevant text chunks**, confirming the **end-to-end pipeline** from PDF to retrievable vector index is working as intended.
+
+---
+
 ### ✅ Outcome
 
 By completing this phase, we now have:
@@ -65,6 +88,8 @@ By completing this phase, we now have:
 - **Clean**, de-noised text  
 - **Semantically coherent** chunks  
 - **Token-count aware** segments  
-- **Traceable metadata** for each clause
+- **Traceable metadata** for each clause  
+- **Vector embeddings** stored in a performant vector database  
+- **Verified query functionality**
 
-This dataset is now **fully ready** for transformation into numerical embeddings, powering **efficient and accurate semantic retrieval** in Phase 2.
+This dataset is now **fully ready** for Phase 2: Semantic Search &
